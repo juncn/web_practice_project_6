@@ -1,0 +1,79 @@
+@import "../../styles/variables";
+@import "../../styles/mixin";
+
+main {
+  padding: 2.5rem 2rem;
+  background-color: $white;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  color: $dark-grayish-cyan;
+}
+
+.bill,
+.tip,
+.people {
+  margin-bottom: 2rem;
+}
+
+.tip {
+  .label {
+    margin-bottom: 1rem;
+  }
+}
+
+.label {
+  @include label;
+}
+
+.input {
+  @include input;
+}
+
+#bill-input {
+  background-image: url("../../images/icon-dollar.svg");
+}
+
+#num-of-people {
+  background-image: url("../../images/icon-person.svg");
+}
+
+.tip-percent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.tip-percent-btn {
+  flex-basis: 47%;
+  width: 47%;
+  background-color: $dark-cyan;
+  border: none;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 0.4rem;
+  color: $white;
+  font-size: 1.5rem;
+  font-weight: $fw-bold;
+
+  &:hover,
+  &:focus {
+    background-color: $cyan;
+    color: $dark-cyan;
+  }
+}
+
+.custom-percent {
+  text-align: right;
+  max-height: 50px;
+  flex-basis: 47%;
+  width: 47%;
+  padding: 0.8rem;
+  margin: 0;
+  border: none;
+  background-color: $lighter-grayish-cyan;
+  font-size: 1.5rem;
+  font-weight: $fw-bold;
+  border-radius: 0.4rem;
+  box-sizing: border-box;
+  color: $dark-cyan;
+}
