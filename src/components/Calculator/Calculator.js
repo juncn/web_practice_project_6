@@ -3,6 +3,9 @@ import "./Calculator.scss";
 import BillInput from "../BillInput/BillInput";
 import TipInput from "../TipInput/TipInput";
 import PeopleInput from "../PeopleInput/PeopleInput";
+import TipAmount from "../TipAmount/TipAmount";
+import TotalAmount from "../TotalAmount/TotalAmount";
+import ResetButton from "../ResetButton/ResetButton";
 
 const Calculator = () => {
   const [bill, setBill] = useState(0);
@@ -33,11 +36,11 @@ const Calculator = () => {
 
   const handleBillChange = (newBill) => {
     setBill(newBill);
-  }
+  };
 
   const handleNumOfPeopleChange = (newNumOfPeople) => {
     setNumOfPeople(newNumOfPeople);
-  }
+  };
 
   const handleReset = () => {
     setBill(0);
@@ -51,26 +54,15 @@ const Calculator = () => {
       <section className="input-section">
         <BillInput bill={bill} handleBillChange={handleBillChange} />
         <TipInput customTip={customTip} handleTipChange={handleTipChange} />
-        <PeopleInput numOfPeople={numOfPeople} handleNumOfPeopleChange={handleNumOfPeopleChange} />
+        <PeopleInput
+          numOfPeople={numOfPeople}
+          handleNumOfPeopleChange={handleNumOfPeopleChange}
+        />
       </section>
       <section className="result-section">
-        <div className="tip-amount">
-          <label>
-            Tip Amount <br /> <span>/ person</span>
-          </label>
-          <label className="result-text">{`$${tipPerPerson}`}</label>
-        </div>
-        <div className="total">
-          <label>
-            Total <br /> <span>/ person</span>
-          </label>
-          <label className="result-text">{`$${totalPerPerson}`}</label>
-        </div>
-        <div className="reset">
-          <button className="reset-btn" onClick={handleReset}>
-            Reset
-          </button>
-        </div>
+        <TipAmount tipPerPerson={tipPerPerson} />
+        <TotalAmount totalPerPerson={totalPerPerson} />
+        <ResetButton handleReset={handleReset} />
       </section>
     </main>
   );
