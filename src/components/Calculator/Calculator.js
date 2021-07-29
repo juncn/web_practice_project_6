@@ -14,6 +14,7 @@ const Calculator = () => {
             type="number"
             min="0"
             max="1000000"
+            placeholder="0"
           />
         </div>
         <div className="tip">
@@ -35,7 +36,7 @@ const Calculator = () => {
           <label className="label" htmlFor="num-of-people">
             Number of People
           </label>
-          <input className="input" id="num-of-people" type="number" />
+          <input className="input" id="num-of-people" type="number" placeholder="1" min="1" />
         </div>
       </section>
       <section className="result-section">
@@ -43,13 +44,13 @@ const Calculator = () => {
           <label>
             Tip Amount <br /> <span>/ person</span>
           </label>
-          <label className="result-text">$4.23</label>
+          <label className="result-text">$0.00</label>
         </div>
         <div className="total">
           <label>
             Total <br /> <span>/ person</span>
           </label>
-          <label className="result-text">$43.2</label>
+          <label className="result-text">$0.00</label>
         </div>
         <div className="reset">
           <button className="reset-btn">Reset</button>

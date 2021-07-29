@@ -121,3 +121,37 @@ main {
   font-size: 1.125rem;
   font-weight: $fw-bold;
 }
+
+@media only screen and (min-width: 1024px) {
+  main {
+    max-width: 820px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 2rem;
+    margin: auto;
+  }
+
+  .input-section,
+  .result-section {
+    flex-basis: 45%;
+    width: 45%;
+  }
+
+  .result-section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-bottom: 2.5rem;
+  }
+
+  .reset {
+    margin-top: auto;
+  }
+
+  .tip-percent-btn,
+  .custom-percent {
+    flex-basis: 30%;
+    width: 30%;
+    font-size: 1.2rem;
+  }
+}
