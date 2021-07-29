@@ -54,11 +54,23 @@ main {
   color: $white;
   font-size: 1.5rem;
   font-weight: $fw-bold;
+  text-align: center;
+  cursor: pointer;
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: $cyan;
     color: $dark-cyan;
+  }
+
+  &:focus {
+    background-color: $light-grayish-cyan;
+    color: $dark-cyan;
+  }
+
+  input {
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
   }
 }
 
@@ -74,7 +86,6 @@ main {
   font-size: 1.5rem;
   font-weight: $fw-bold;
   border-radius: 0.4rem;
-  box-sizing: border-box;
   color: $dark-cyan;
 }
 
@@ -133,8 +144,8 @@ main {
 
   .input-section,
   .result-section {
-    flex-basis: 45%;
-    width: 45%;
+    flex-basis: 49%;
+    width: 49%;
   }
 
   .result-section {

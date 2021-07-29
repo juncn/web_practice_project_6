@@ -1,9 +1,14 @@
 @import-normalize;
 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 html {
   font-family: 'Space Mono', monospace;
   font-size: 16px;
-  box-sizing: border-box;
 }
 
 body {
