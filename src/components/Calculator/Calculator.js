@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Calculator.scss";
 import BillInput from "../BillInput/BillInput";
+import TipInput from "../TipInput/TipInput";
 
 const Calculator = () => {
   const [bill, setBill] = useState(0);
@@ -25,11 +26,8 @@ const Calculator = () => {
     setTotalPerPerson(finalTotalPerPerson);
   }, [bill, numOfPeople, tipPerPerson]);
 
-  const handleTipChange = (e) => {
-    if (e.target.type === "submit") {
-      setTip(+parseFloat(e.target.textContent));
-      setCustomTip(0);
-    }
+  const handleTipChange = (newTip) => {
+    setTip(newTip);
   };
 
   const handleBillChange = (newBill) => {
@@ -47,25 +45,7 @@ const Calculator = () => {
     <main>
       <section className="input-section">
         <BillInput bill={bill} handleBillChange={handleBillChange} />
-        <div className="tip">
-          <label className="label">Select Tip &#37;</label>
-          <div className="tip-percent" onClick={(e) => handleTipChange(e)}>
-            <button className="tip-percent-btn">5&#37;</button>
-            <button className="tip-percent-btn">10&#37;</button>
-            <button className="tip-percent-btn">15&#37;</button>
-            <button className="tip-percent-btn">25&#37;</button>
-            <button className="tip-percent-btn">50&#37;</button>
-            <input
-              className="custom-percent"
-              type="number"
-              placeholder="Custom"
-              value={customTip}
-              onChange={(e) =>
-                setCustomTip(Math.abs(e.target.value).toFixed(2) || 0)
-              }
-            />
-          </div>
-        </div>
+        <TipInput customTip={customTip} handleTipChange={handleTipChange} />
         <div className="people">
           <label className="label" htmlFor="num-of-people">
             Number of People
