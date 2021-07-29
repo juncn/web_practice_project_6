@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./Calculator.scss";
 import BillInput from "../BillInput/BillInput";
 import TipInput from "../TipInput/TipInput";
+import PeopleInput from "../PeopleInput/PeopleInput";
 
 const Calculator = () => {
   const [bill, setBill] = useState(0);
@@ -34,6 +35,10 @@ const Calculator = () => {
     setBill(newBill);
   }
 
+  const handleNumOfPeopleChange = (newNumOfPeople) => {
+    setNumOfPeople(newNumOfPeople);
+  }
+
   const handleReset = () => {
     setBill(0);
     setNumOfPeople(1);
@@ -46,24 +51,7 @@ const Calculator = () => {
       <section className="input-section">
         <BillInput bill={bill} handleBillChange={handleBillChange} />
         <TipInput customTip={customTip} handleTipChange={handleTipChange} />
-        <div className="people">
-          <label className="label" htmlFor="num-of-people">
-            Number of People
-          </label>
-          <input
-            className="input"
-            id="num-of-people"
-            type="number"
-            placeholder="1"
-            min="1"
-            step="1"
-            pattern="/d+"
-            value={numOfPeople || 1}
-            onChange={(e) =>
-              setNumOfPeople(Math.abs(Math.ceil(e.target.value) || 1))
-            }
-          />
-        </div>
+        <PeopleInput numOfPeople={numOfPeople} handleNumOfPeopleChange={handleNumOfPeopleChange} />
       </section>
       <section className="result-section">
         <div className="tip-amount">
