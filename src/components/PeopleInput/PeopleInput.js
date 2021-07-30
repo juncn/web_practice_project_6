@@ -1,4 +1,5 @@
 import "./PeopleInput.scss";
+import PropTypes from "prop-types";
 
 const PeopleInput = ({ numOfPeople, handleNumOfPeopleChange }) => {
   return (
@@ -21,6 +22,11 @@ const PeopleInput = ({ numOfPeople, handleNumOfPeopleChange }) => {
       />
     </div>
   );
+};
+
+PeopleInput.propTypes = {
+  numOfPeople: PropTypes.number.isRequired,
+  handleNumOfPeopleChange: PropTypes.func.isRequired,
 };
 
 export default PeopleInput;
