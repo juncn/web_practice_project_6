@@ -11,6 +11,7 @@ const Calculator = () => {
   const DEFAULT_TIP = "15";
   const DEFAULT_CUSTOM_TIP = "";
 
+  const [isBtnActive, setIsBtnActive] = useState(true);
   const [bill, setBill] = useState(0);
   const [numOfPeople, setNumOfPeople] = useState(1);
   const [tip, setTip] = useState(DEFAULT_TIP);
@@ -19,7 +20,14 @@ const Calculator = () => {
   const [totalPerPerson, setTotalPerPerson] = useState(0);
 
   useEffect(() => {
-    const finalTip = parseFloat(customTip) > 0 ? parseFloat(customTip) : parseFloat(tip);
+    if (bill) {
+      setIsBtnActive(false);
+    }
+  }, [bill]);
+
+  useEffect(() => {
+    const finalCustomTip = customTip !== "" ? parseFloat(customTip) : parseFloat(0);
+    const finalTip = finalCustomTip > 0 ? parseFloat(finalCustomTip) : parseFloat(tip);
     const finalTipPerPerson = parseFloat(bill) * (finalTip / 100) / numOfPeople;
     setTipPerPerson(finalTipPerPerson.toFixed(2));
     
@@ -52,6 +60,7 @@ const Calculator = () => {
     setNumOfPeople(1);
     setTip(DEFAULT_TIP);
     setCustomTip(DEFAULT_CUSTOM_TIP);
+    setIsBtnActive(true);
   };
 
   return (
@@ -72,7 +81,7 @@ const Calculator = () => {
       <section className="result-section">
         <TipAmount tipPerPerson={tipPerPerson} />
         <TotalAmount totalPerPerson={totalPerPerson} />
-        <ResetButton handleReset={handleReset} />
+        <ResetButton handleReset={handleReset} active={isBtnActive} />
       </section>
     </main>
   );

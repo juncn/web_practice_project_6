@@ -1,13 +1,19 @@
 const TipInput = ({ tip, customTip, handleTipChange, handleCustomTipChange }) => {
   const handleOnChange = (e) => {
     if (e.target.type === "radio") {
-      handleCustomTipChange("");
+      if (customTip !== "") {
+        handleCustomTipChange("");
+      }
       handleTipChange(e.target.value);
     }
   }
 
   const handleCustomPercentChange = (e) => {
-    handleTipChange("");
+    if (e.target.value === "") {
+      handleTipChange("15");
+    } else {
+      handleTipChange("");
+    }
     handleCustomTipChange(e.target.value.toString());
   }
 
