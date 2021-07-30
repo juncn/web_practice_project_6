@@ -57,7 +57,7 @@ main {
   cursor: pointer;
 
   &:hover {
-    background-color: $cyan;
+    background-color: $light-grayish-cyan;
     color: $dark-cyan;
   }
 }
@@ -68,7 +68,7 @@ main {
   pointer-events: none;
 
   &:checked + .tip-label {
-    background-color: $light-grayish-cyan;
+    background-color: $cyan;
     color: $dark-cyan;
   }
 }
@@ -130,6 +130,17 @@ main {
   text-transform: uppercase;
   font-size: 1.125rem;
   font-weight: $fw-bold;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $light-grayish-cyan;
+    color: $dark-cyan;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: $darker-grayish-cyan;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
