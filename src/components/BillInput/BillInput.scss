@@ -1,0 +1,17 @@
+@import "../../styles/mixin";
+
+.bill {
+  margin-bottom: 2rem;
+}
+
+.label {
+  @include label;
+}
+
+.input {
+  @include input;
+}
+
+#bill-input {
+  background-image: url("../../images/icon-dollar.svg");
+}

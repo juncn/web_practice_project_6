@@ -22,6 +22,8 @@ const Calculator = () => {
   useEffect(() => {
     if (bill) {
       setIsBtnActive(false);
+    } else {
+      setIsBtnActive(true);
     }
   }, [bill]);
 

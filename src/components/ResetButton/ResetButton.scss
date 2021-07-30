@@ -1,0 +1,30 @@
+@import "../../styles/variables";
+
+.reset-btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: $cyan;
+  color: $dark-cyan;
+  border: none;
+  border-radius: 0.4rem;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  font-weight: $fw-bold;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $light-grayish-cyan;
+    color: $dark-cyan;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: $darker-grayish-cyan;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .reset {
+    margin-top: auto;
+  }
+}

@@ -1,3 +1,5 @@
+import "./TipAmount.scss";
+
 const TipAmount = ({ tipPerPerson }) => (
   <div className="tip-amount">
     <label>

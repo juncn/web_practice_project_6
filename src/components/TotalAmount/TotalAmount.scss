@@ -1,0 +1,25 @@
+@import "../../styles/variables";
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+
+  label {
+    color: $white;
+    font-size: 1rem;
+    font-weight: $fw-bold;
+  }
+
+  span {
+    font-size: 0.8rem;
+    color: $darker-grayish-cyan;
+  }
+
+  .result-text {
+    font-size: 2rem;
+    color: $cyan;
+  }
+}

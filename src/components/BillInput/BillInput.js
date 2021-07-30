@@ -1,3 +1,5 @@
+import "./BillInput.scss";
+
 const BillInput = ({ bill, handleBillChange }) => {
   return (
     <div className="bill">

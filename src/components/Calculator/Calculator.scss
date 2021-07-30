@@ -1,5 +1,4 @@
 @import "../../styles/variables";
-@import "../../styles/mixin";
 
 main {
   padding: 2.5rem 2rem;
@@ -9,138 +8,11 @@ main {
   color: $dark-grayish-cyan;
 }
 
-.bill,
-.tip,
-.people {
-  margin-bottom: 2rem;
-}
-
-.tip {
-  .label {
-    margin-bottom: 1rem;
-  }
-}
-
-.label {
-  @include label;
-}
-
-.input {
-  @include input;
-}
-
-#bill-input {
-  background-image: url("../../images/icon-dollar.svg");
-}
-
-#num-of-people {
-  background-image: url("../../images/icon-person.svg");
-}
-
-.tip-percent {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.tip-label {
-  flex-basis: 47%;
-  width: 47%;
-  background-color: $dark-cyan;
-  padding: 0.8rem;
-  margin-bottom: 1rem;
-  border-radius: 0.4rem;
-  color: $white;
-  font-size: 1.5rem;
-  font-weight: $fw-bold;
-  text-align: center;
-  cursor: pointer;
-
-  &:hover {
-    background-color: $light-grayish-cyan;
-    color: $dark-cyan;
-  }
-}
-
-.tip-input {
-  position: fixed;
-  opacity: 0;
-  pointer-events: none;
-
-  &:checked + .tip-label {
-    background-color: $cyan;
-    color: $dark-cyan;
-  }
-}
-
-.custom-percent {
-  text-align: right;
-  max-height: 50px;
-  flex-basis: 47%;
-  width: 47%;
-  padding: 0.8rem;
-  margin: 0;
-  border: none;
-  background-color: $lighter-grayish-cyan;
-  font-size: 1.5rem;
-  font-weight: $fw-bold;
-  border-radius: 0.4rem;
-  color: $dark-cyan;
-}
-
 .result-section {
   background-color: $dark-cyan;
   padding: 2.5rem 2rem;
   padding-bottom: 1.5rem;
   border-radius: 1rem;
-
-  label {
-    color: $white;
-    font-size: 1rem;
-    font-weight: $fw-bold;
-  }
-
-  span {
-    font-size: 0.8rem;
-    color: $darker-grayish-cyan;
-  }
-
-  .result-text {
-    font-size: 2rem;
-    color: $cyan;
-  }
-}
-
-.tip-amount,
-.total {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.reset-btn {
-  width: 100%;
-  padding: 1rem;
-  background-color: $cyan;
-  color: $dark-cyan;
-  border: none;
-  border-radius: 0.4rem;
-  text-transform: uppercase;
-  font-size: 1.125rem;
-  font-weight: $fw-bold;
-  cursor: pointer;
-
-  &:hover {
-    background-color: $light-grayish-cyan;
-    color: $dark-cyan;
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-    background-color: $darker-grayish-cyan;
-  }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -163,16 +35,5 @@ main {
     flex-direction: column;
     flex-wrap: wrap;
     padding-bottom: 2.5rem;
-  }
-
-  .reset {
-    margin-top: auto;
-  }
-
-  .tip-label,
-  .custom-percent {
-    flex-basis: 30%;
-    width: 30%;
-    font-size: 1.2rem;
   }
 }

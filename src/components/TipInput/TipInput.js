@@ -1,3 +1,5 @@
+import "./TipInput.scss";
+
 const TipInput = ({ tip, customTip, handleTipChange, handleCustomTipChange }) => {
   const handleOnChange = (e) => {
     if (e.target.type === "radio") {

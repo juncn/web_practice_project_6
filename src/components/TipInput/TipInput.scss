@@ -1,0 +1,70 @@
+@import "../../styles/mixin";
+
+.tip {
+  margin-bottom: 2rem;
+
+  .label {
+    @include label;
+    margin-bottom: 1rem;
+  }
+}
+
+.tip-percent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.tip-label {
+  flex-basis: 47%;
+  width: 47%;
+  background-color: $dark-cyan;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 0.4rem;
+  color: $white;
+  font-size: 1.5rem;
+  font-weight: $fw-bold;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $light-grayish-cyan;
+    color: $dark-cyan;
+  }
+}
+
+.tip-input {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+
+  &:checked + .tip-label {
+    background-color: $cyan;
+    color: $dark-cyan;
+  }
+}
+
+.custom-percent {
+  text-align: right;
+  max-height: 50px;
+  flex-basis: 47%;
+  width: 47%;
+  padding: 0.8rem;
+  margin: 0;
+  border: none;
+  background-color: $lighter-grayish-cyan;
+  font-size: 1.5rem;
+  font-weight: $fw-bold;
+  border-radius: 0.4rem;
+  color: $dark-cyan;
+}
+
+@media only screen and (min-width: 1024px) {
+  .tip-label,
+  .custom-percent {
+    flex-basis: 30%;
+    width: 30%;
+    font-size: 1.2rem;
+  }
+}

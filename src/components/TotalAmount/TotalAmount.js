@@ -1,3 +1,5 @@
+import "./TotalAmount.scss";
+
 const TotalAmount = ({ totalPerPerson }) => (
   <div className="total">
     <label>

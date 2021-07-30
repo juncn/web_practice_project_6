@@ -1,0 +1,17 @@
+@import "../../styles/mixin";
+
+.people {
+  margin-bottom: 2rem;
+}
+
+.label {
+  @include label;
+}
+
+.input {
+  @include input;
+}
+
+#num-of-people {
+  background-image: url("../../images/icon-person.svg");
+}

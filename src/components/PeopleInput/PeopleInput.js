@@ -1,3 +1,5 @@
+import "./PeopleInput.scss";
+
 const PeopleInput = ({ numOfPeople, handleNumOfPeopleChange }) => {
   return (
     <div className="people">
