@@ -1,4 +1,5 @@
 import "./TipInput.scss";
+import PropTypes from "prop-types";
 
 const TipInput = ({ tip, customTip, handleTipChange, handleCustomTipChange }) => {
   const handleOnChange = (e) => {
@@ -44,6 +45,13 @@ const TipInput = ({ tip, customTip, handleTipChange, handleCustomTipChange }) =>
       </div>
     </div>
   );
+};
+
+TipInput.propTypes = {
+  tip: PropTypes.string.isRequired,
+  customTip: PropTypes.string.isRequired,
+  handleTipChange: PropTypes.func.isRequired,
+  handleCustomTipChange: PropTypes.func.isRequired,
 };
 
 export default TipInput;

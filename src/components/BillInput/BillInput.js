@@ -2,7 +2,6 @@ import "./BillInput.scss";
 import PropTypes from "prop-types";
 
 const BillInput = ({ bill, handleBillChange }) => {
-  console.log(typeof bill);
   return (
     <div className="bill">
       <label className="label" htmlFor="bill-input">
