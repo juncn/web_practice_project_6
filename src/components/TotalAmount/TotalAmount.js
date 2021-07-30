@@ -1,4 +1,5 @@
 import "./TotalAmount.scss";
+import PropTypes from "prop-types";
 
 const TotalAmount = ({ totalPerPerson }) => (
   <div className="total">
@@ -8,5 +9,9 @@ const TotalAmount = ({ totalPerPerson }) => (
     <label className="result-text">{`$${totalPerPerson}`}</label>
   </div>
 );
+
+TotalAmount.propTypes = {
+  totalPerPerson: PropTypes.string.isRequired,
+};
 
 export default TotalAmount;
