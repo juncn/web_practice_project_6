@@ -1,4 +1,5 @@
 import "./ResetButton.scss";
+import PropTypes from "prop-types";
 
 const ResetButton = ({ handleReset, active }) => (
   <div className="reset">
@@ -7,5 +8,10 @@ const ResetButton = ({ handleReset, active }) => (
     </button>
   </div>
 );
+
+ResetButton.propTypes = {
+  active: PropTypes.bool.isRequired,
+  handleReset: PropTypes.func.isRequired,
+};
 
 export default ResetButton;
