@@ -1,6 +1,8 @@
 import "./BillInput.scss";
+import PropTypes from "prop-types";
 
 const BillInput = ({ bill, handleBillChange }) => {
+  console.log(typeof bill);
   return (
     <div className="bill">
       <label className="label" htmlFor="bill-input">
@@ -18,6 +20,11 @@ const BillInput = ({ bill, handleBillChange }) => {
       />
     </div>
   );
+};
+
+BillInput.propTypes = {
+  bill: PropTypes.number.isRequired,
+  handleBillChange: PropTypes.func.isRequired,
 };
 
 export default BillInput;
