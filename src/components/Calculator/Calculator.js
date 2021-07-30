@@ -16,8 +16,8 @@ const Calculator = () => {
   const [numOfPeople, setNumOfPeople] = useState(1);
   const [tip, setTip] = useState(DEFAULT_TIP);
   const [customTip, setCustomTip] = useState(DEFAULT_CUSTOM_TIP);
-  const [tipPerPerson, setTipPerPerson] = useState(0);
-  const [totalPerPerson, setTotalPerPerson] = useState(0);
+  const [tipPerPerson, setTipPerPerson] = useState("");
+  const [totalPerPerson, setTotalPerPerson] = useState("");
 
   useEffect(() => {
     if (bill) {
