@@ -1,6 +1,7 @@
-## Available Scripts
+# Tip Calculator
 
-In the project directory, you can run:
+![Image of Tip Calculator](https://github.com/juncn/web_practice_project_6/blob/master/design/desktop-preview.jpg)
+
 
 ### `npm start`
 
